@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="./assets/css/landing.css">
+</head>
+
+<body ng-controller="mainController">
+    <header>
+        <h1 class="heading">Midtown Dev Shop - Admin Site</h1>
+        <div class="logo-container">
+            <img src="./assets/images/MidtownLogo.png">
+        </div>
+    </header>
+    <section class="form">
+        <form class="loginform">
+            <label for="username">Username:</label>
+            <br>
+            <input type="text" name="username" ng-model="user.username">
+            <br>
+            <label for="Password">Password:</label>
+            <br>
+            <input type="password" name="password" ng-model="user.password">
+            <br>
+            <div class="btnContainer">
+                <button class="submitButton" ng-click="login(user)">Submit</button>
+            </div>
+        </form>
+    </section>
+</body>
