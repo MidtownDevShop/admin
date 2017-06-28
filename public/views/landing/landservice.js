@@ -20,6 +20,9 @@ angular.module("landing", ['ngStorage'])
         return $http.get("/user/login", config)
             .then(function (response) {
                 tokenService.setToken(response.data.token);
+            if(response.data.token){
+                $location.path("/home");
+            }
                 return response.data;
             });
     };
@@ -27,7 +30,7 @@ angular.module("landing", ['ngStorage'])
         tokenService.removeToken();
         localStorage.clear();
         console.log(tokenService.getToken());
-        $location.path("/home");
+        $location.path("/dashboard");
     }
     this.isAuthenticated = function () {
         return !!tokenService.getToken();

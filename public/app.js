@@ -1,8 +1,9 @@
 angular.module("admin", ["ngRoute", "landing"])
 
 .controller("mainController", ["$scope", "landService", function ($scope, landService) {
-    $scope.login = function () {
-        landService.login();
+    $scope.login = function (user) {
+        landService.login(user).then(function (response) {
+        });
     }
     $scope.logout = function () {
         authService.logout();
