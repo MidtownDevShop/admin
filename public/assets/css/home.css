@@ -1,0 +1,25 @@
+.heading {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+.logout {
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Spartan';
+    height: 50px;
+    width: 100px;
+    background: none;
+    border-radius: 20px;
+    border: black 2px solid;
+    float: right;
+    transform: translate(0, -90px);
+}
+
+.logout:hover {
+    transition: ease-in-out .4s;
+    color: white;
+    background-color: red;
+    border: red 2px solid;
+}

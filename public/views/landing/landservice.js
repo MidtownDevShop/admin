@@ -17,10 +17,12 @@ angular.module("landing", ['ngStorage'])
         var config = {
             headers: login
         };
-        return $http.get("/user/login", config)
+        return $http.get("/auth/login", config)
             .then(function (response) {
+                sessionStorage.setItem("username", response.data.user.username);
+                sessionStorage.setItem("token", response.data.token);
                 tokenService.setToken(response.data.token);
-            if(response.data.token){
+            if(sessionStorage.token){
                 $location.path("/home");
             }
                 return response.data;

@@ -13,7 +13,8 @@ app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 
-app.use("/user", require("./routes/user"));
+app.use("/auth", require("./routes/auth"));
+app.use("/user", expressJwt({secret: config.secret}), require("./routes/user"));
 
 mongoose.connect(config.database, function (err) {
     if (err) throw err;
@@ -21,5 +22,5 @@ mongoose.connect(config.database, function (err) {
 });
 
 app.listen(port, function () {
-    console.log("Now listening on port" + port);
+    console.log("Now listening on port " + port);
 });

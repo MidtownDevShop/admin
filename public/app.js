@@ -1,4 +1,4 @@
-angular.module("admin", ["ngRoute", "landing"])
+angular.module("admin", ["ngRoute", "landing", "home"])
 
 .controller("mainController", ["$scope", "landService", function ($scope, landService) {
     $scope.login = function (user) {
