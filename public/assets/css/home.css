@@ -23,3 +23,17 @@
     background-color: red;
     border: red 2px solid;
 }
+
+.gettingstarted {
+    text-align: center;
+    margin-right: none !important;
+}
+
+.gshead {
+    transform: translate(50px, 0);
+}
+
+ol, ul {
+    font-size: 16px;
+    line-height: 25px;
+}
